@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: webapp
+  name: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: webapp
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        name: webapp
+    spec:
+      containers:
+        - image: 'thingookni/webapp:${WEBAPP_TAG}'
+          imagePullPolicy: Always
+          name: webapp
+          ports:
+            - containerPort: 80
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: webapp
+  name: webapp
+spec:
+  selector:
+    name: webapp
+  ports:
+    - protocol: TCP
+      port: 8082
+      targetPort: 80
