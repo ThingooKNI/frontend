@@ -20,7 +20,7 @@ $thingoo-frontend-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$thingoo-frontend-theme: mat-light-theme((
+$thingoo-frontend-theme: mat-dark-theme((
   color: (
     primary: $thingoo-frontend-primary,
     accent: $thingoo-frontend-accent,
@@ -41,4 +41,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .wrapper {
   max-width: 1060px;
   margin: 0 auto;
+}
+
+.mat-app-background {
+  height: 100%;
 }
