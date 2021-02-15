@@ -1,0 +1,10 @@
+.header {
+    &-container {
+        display: flex;
+        place-content: center space-between;
+    }
+
+    &-logo {
+        height: 75%;
+    }
+}

@@ -37,3 +37,8 @@ $thingoo-frontend-theme: mat-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.wrapper {
+  max-width: 1060px;
+  margin: 0 auto;
+}
