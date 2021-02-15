@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "standard && ts-standard",
     "e2e": "ng e2e",
     "format": "standard --fix && ts-standard --fix"
   },
