@@ -1,1 +1,28 @@
-<p>login-page works!</p>
+<mat-card class="login-card">
+    <mat-card-header>
+        <div mat-card-avatar class="login-card__image"></div>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-subtitle>Please enter your login and password.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="login-card__content">
+        <form [formGroup]="loginForm">
+            <p>
+                <mat-form-field appearance="fill" class="form-field">
+                <mat-label>Username</mat-label>
+                <input matInput type="text" [formControlName]="'username'"/>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill" class="form-field">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" [formControlName]="'password'"/>
+                </mat-form-field>
+            </p>
+        </form>
+    </mat-card-content>
+    <mat-card-actions class="login-card__buttons">
+        <button mat-button>BACK</button>
+        <button mat-button>LOGIN</button>
+      </mat-card-actions>
+</mat-card>
+
