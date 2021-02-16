@@ -1,6 +1,8 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row class="wrapper header-container">
-        <img src="/assets/thingoo.png" class="header-logo">
+        <a mat-button [routerLink]="'/'" class="header-logo">
+            <img src="/assets/thingoo.png" class="header-logo__image">
+        </a>
         <div class="header-section">
             <a mat-button [routerLink]="'/login'">Login</a>
             <a mat-button [routerLink]="'/register'">Register</a>
