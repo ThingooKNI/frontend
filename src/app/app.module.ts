@@ -13,7 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './shared/header/header.component'
 import { FooterComponent } from './shared/footer/footer.component'
-import { DashboardComponent } from './pages/dashboard/dashboard.component'
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -36,7 +37,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserProfileComponent,
   ],
   imports: [
     MatToolbarModule,
