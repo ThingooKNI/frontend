@@ -4,8 +4,13 @@
             <img src="/assets/thingoo.png" class="header-logo__image">
         </a>
         <div class="header-section">
-            <a mat-stroked-button click="login()">Login</a>
-            <a mat-stroked-button click="logout()">Logout</a>
+            <ng-container *ngIf="isLoggedIn">
+                <a mat-stroked-button [routerLink]="'profile'">Profile</a>
+                <a mat-stroked-button (click)="logout()">Logout</a>
+            </ng-container>
+            <ng-container *ngIf="!isLoggedIn">
+                <a mat-stroked-button (click)="login()">Login</a>
+            </ng-container>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
