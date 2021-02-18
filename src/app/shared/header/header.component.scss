@@ -4,6 +4,12 @@
         place-content: center space-between;
     }
 
+    &-section {
+        a:not(:first-of-type) {
+            margin-left: 10px;
+        }
+    }
+
     &-logo {
         height: 75%;
 
