@@ -12,8 +12,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './shared/header/header.component'
 import { FooterComponent } from './shared/footer/footer.component'
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component'
 
 @NgModule({
@@ -21,8 +19,6 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginPageComponent,
-    RegisterPageComponent,
     DashboardComponent
   ],
   imports: [
