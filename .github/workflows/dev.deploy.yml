@@ -1,0 +1,79 @@
+name: Build, Docker, k8s
+
+on:
+  push:
+    tags:  [ '*.*.*' ]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 15.x
+      - run: npm ci
+      - run: npm run build -- --prod
+      - name: Docker meta
+        id: docker_meta
+        uses: crazy-max/ghaction-docker-meta@v1
+        with:
+          images: |
+            thingookni/webapp
+            ghcr.io/thingookni/webapp
+          tag-semver: |
+            {{version}}
+            {{major}}.{{minor}}
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Login to GHCR
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          context: .
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }
+
+  development:
+    needs: docker
+    name: Deploy to dev k8s cluster
+    environment:
+      name: development
+      url: https://dev.thingoo.xyz
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install envsubst
+        run: sudo apt-get install gettext-base
+      - name: Extract git tag name
+        uses: olegtarasov/get-tag@v2.1
+        id: tagName
+      - name: envsubst webapp version
+        run: |
+          export WEBAPP_TAG=$GIT_TAG_NAME
+          envsubst < k8s/dev/webapp.yaml > k8s/dev/webapp-envsubst.yaml
+      - name: Deploy to Kubernetes cluster
+        uses: stefanprodan/kube-tools@v1
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        with:
+          command: |
+            echo "$KUBE_CONFIG_DATA" | base64 -d > /tmp/config
+            export KUBECONFIG=/tmp/config
+            kubectl apply --namespace thingoo -f k8s/dev/webapp-envsubst.yaml
+            kubectl apply --namespace thingoo -f k8s/dev/ingress.yaml
