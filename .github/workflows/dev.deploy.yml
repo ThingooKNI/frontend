@@ -47,7 +47,7 @@ jobs:
           push: true
           context: .
           tags: ${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ steps.docker_meta.outputs.labels }
+          labels: ${{ steps.docker_meta.outputs.labels }}
 
   development:
     needs: docker
