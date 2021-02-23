@@ -3,3 +3,10 @@ build
 coverage
 e2e
 node_modules
+dist
+package.json
+package-lock.json
+.github
+.htmlhintrc
+.vscode
+k8s
