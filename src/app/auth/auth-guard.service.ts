@@ -1,29 +1,24 @@
-import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
-import { KeycloakAuthGuard, KeycloakService } from 'keycloak-angular';
+import { Injectable } from '@angular/core'
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, CanActivate } from '@angular/router'
+import { OAuthService } from 'angular-oauth2-oidc'
+import { AuthService } from './auth.service'
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class AuthGuardService extends KeycloakAuthGuard {
-  constructor(
+export class AuthGuardService implements CanActivate {
+  constructor (
     protected readonly router: Router,
-    protected readonly keycloak: KeycloakService
-  ) {
-    super(router, keycloak)
-  }
+    protected readonly authService: AuthService
+  ) { }
 
-  public async isAccessAllowed(
-    _: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ) {
-    // Force the user to log in if currently unauthenticated.
-    if (!this.authenticated) {
-      await this.keycloak.login({
-        redirectUri: window.location.origin + state.url,
-      })
+  canActivate (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    if (this.authService.isLoggedIn) {
+      return true
     }
-    // Otherwise let the user in.
-    return true
+
+    // TODO: redirect to window.location.origin + state.url after logging in
+    this.authService.beginLoginFlow()
+    return false
   }
 }
