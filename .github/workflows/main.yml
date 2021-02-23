@@ -23,6 +23,7 @@ jobs:
           FILTER_REGEX_INCLUDE: .*src/.*
           FILTER_REGEX_EXCLUDE: .*e2e/src/.*
           JAVASCRIPT_DEFAULT_STYLE: prettier
+          VALIDATE_TYPESCRIPT_STANDARD: false
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
