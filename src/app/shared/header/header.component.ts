@@ -6,14 +6,8 @@ import { AuthService } from 'src/app/auth/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
-  public isLoggedIn: boolean = false;
-
+export class HeaderComponent {
   constructor(public readonly authService: AuthService) {}
-
-  public ngOnInit() {
-    this.isLoggedIn = this.authService.isLoggedIn;
-  }
 
   public login() {
     this.authService.beginLoginFlow();
