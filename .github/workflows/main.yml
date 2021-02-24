@@ -1,0 +1,35 @@
+name: Lint, Build
+
+on:
+  push:
+    branches: [ '**' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 14.x, 15.x ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Super-Linter
+        uses: github/super-linter@v3.14.0
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          DEFAULT_BRANCH: develop
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILTER_REGEX_INCLUDE: .*src/.*
+          FILTER_REGEX_EXCLUDE: .*e2e/src/.*
+          JAVASCRIPT_DEFAULT_STYLE: prettier
+          VALIDATE_TYPESCRIPT_STANDARD: false
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build -- --prod
+      - run: npm test -- --configuration=ci
+      - run: npm run e2e -- --configuration=ci

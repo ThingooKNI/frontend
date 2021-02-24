@@ -37,7 +37,6 @@ import { AuthConfigModule } from './auth/auth-config.module'
     AuthConfigModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}
