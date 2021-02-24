@@ -10,6 +10,4 @@ export const authConfig: AuthConfig = {
     window.location.origin + '/assets/silent-check-sso.html',
   scope: 'openid profile email',
   useSilentRefresh: true,
-  showDebugInformation: true,
-  disableAtHashCheck: true,
 };
