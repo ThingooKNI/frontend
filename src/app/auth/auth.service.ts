@@ -1,26 +1,27 @@
 import { Injectable } from '@angular/core';
-import {
-  OAuthService,
-  NullValidationHandler,
-  UserInfo,
-} from 'angular-oauth2-oidc';
+import { Router } from '@angular/router';
+import { OAuthService, NullValidationHandler } from 'angular-oauth2-oidc';
 import { authConfig } from './auth-config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private _userProfile: UserInfo | null = null;
-
-  public get isLoggedIn() {
-    return this.oauthService.hasValidAccessToken();
+  public get isLoggedIn(): boolean {
+    return (
+      this.oauthService.hasValidAccessToken() &&
+      this.oauthService.hasValidIdToken()
+    );
   }
 
-  public get userProfile() {
-    return this._userProfile;
+  public get userProfile(): any {
+    return this.oauthService.getIdentityClaims();
   }
 
-  constructor(private readonly oauthService: OAuthService) {}
+  constructor(
+    private readonly oauthService: OAuthService,
+    protected readonly router: Router
+  ) {}
 
   public initAuth() {
     this.oauthService.configure(authConfig);
@@ -29,16 +30,20 @@ export class AuthService {
 
     this.oauthService
       .loadDiscoveryDocumentAndTryLogin()
-      .then(async (isLoggedIn) => {
-        if (isLoggedIn) {
-          this._userProfile = await this.oauthService.loadUserProfile();
+      .then(async (tokensReceived) => {
+        if (tokensReceived && this.isLoggedIn) {
+          await this.oauthService.loadUserProfile();
           this.oauthService.setupAutomaticSilentRefresh();
+
+          if (this.oauthService.state) {
+            this.router.navigate([this.oauthService.state]);
+          }
         }
       });
   }
 
-  public beginLoginFlow() {
-    this.oauthService.initLoginFlow();
+  public beginLoginFlow(routeUrl?: string) {
+    this.oauthService.initLoginFlow(routeUrl);
   }
 
   public logout() {

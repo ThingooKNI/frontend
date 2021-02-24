@@ -21,12 +21,9 @@ export class AuthGuardService implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    if (this.authService.isLoggedIn) {
-      return true;
-    }
+    if (this.authService.isLoggedIn) return true;
 
-    // TODO: redirect to window.location.origin + state.url after logging in
-    this.authService.beginLoginFlow();
+    this.authService.beginLoginFlow(state.url.substring(1));
     return false;
   }
 }
