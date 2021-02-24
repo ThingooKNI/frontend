@@ -3,7 +3,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { OAuthModule } from 'angular-oauth2-oidc'
 import { AuthService } from './auth.service'
 
-export function init_app (authService: AuthService) {
+export function initApp (authService: AuthService) {
   return () => authService.initAuth()
 }
 
@@ -13,7 +13,7 @@ export function init_app (authService: AuthService) {
     AuthService,
     {
       provide: APP_INITIALIZER,
-      useFactory: init_app,
+      useFactory: initApp,
       deps: [AuthService],
       multi: true
     }
