@@ -1,7 +1,10 @@
 <html>
-<body>
+  <body>
     <script>
-        (window.opener || window.parent).postMessage(location.hash || ('#' + location.search), location.origin);
+      (window.opener || window.parent).postMessage(
+        location.hash || "#" + location.search,
+        location.origin
+      );
     </script>
-</body>
+  </body>
 </html>

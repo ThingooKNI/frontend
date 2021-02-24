@@ -1,4 +1,4 @@
-import { AuthConfig } from 'angular-oauth2-oidc'
+import { AuthConfig } from 'angular-oauth2-oidc';
 
 export const authConfig: AuthConfig = {
   issuer: 'https://dev.thingoo.xyz/auth/realms/Thingoo',
@@ -6,9 +6,10 @@ export const authConfig: AuthConfig = {
   responseType: 'code',
   redirectUri: window.location.origin,
   postLogoutRedirectUri: window.location.origin,
-  silentRefreshRedirectUri: window.location.origin + '/assets/silent-check-sso.html',
+  silentRefreshRedirectUri:
+    window.location.origin + '/assets/silent-check-sso.html',
   scope: 'openid profile email',
   useSilentRefresh: true,
   showDebugInformation: true,
-  disableAtHashCheck: true
-}
+  disableAtHashCheck: true,
+};

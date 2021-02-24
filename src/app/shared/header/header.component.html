@@ -1,16 +1,16 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row class="wrapper header-container">
-        <a mat-button [routerLink]="'/'" class="header-logo">
-            <img src="/assets/thingoo.png" class="header-logo__image">
-        </a>
-        <div class="header-section">
-            <ng-container *ngIf="authService.isLoggedIn">
-                <a mat-stroked-button [routerLink]="'profile'">Profile</a>
-                <a mat-stroked-button (click)="logout()">Logout</a>
-            </ng-container>
-            <ng-container *ngIf="!authService.isLoggedIn">
-                <a mat-stroked-button (click)="login()">Login</a>
-            </ng-container>
-        </div>
-    </mat-toolbar-row>
+  <mat-toolbar-row class="wrapper header-container">
+    <a mat-button [routerLink]="'/'" class="header-logo">
+      <img src="/assets/thingoo.png" class="header-logo__image" />
+    </a>
+    <div class="header-section">
+      <ng-container *ngIf="authService.isLoggedIn">
+        <a mat-stroked-button [routerLink]="'profile'">Profile</a>
+        <a mat-stroked-button (click)="logout()">Logout</a>
+      </ng-container>
+      <ng-container *ngIf="!authService.isLoggedIn">
+        <a mat-stroked-button (click)="login()">Login</a>
+      </ng-container>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>
