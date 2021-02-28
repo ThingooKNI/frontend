@@ -1,5 +1,7 @@
 # ThingooFrontend
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b8f8ead136d345559a7586375ec6366f)](https://app.codacy.com/gh/ThingooKNI/frontend?utm_source=github.com&utm_medium=referral&utm_content=ThingooKNI/frontend&utm_campaign=Badge_Grade_Settings)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.11.
 
 ## Development server
