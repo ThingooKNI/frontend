@@ -1,7 +1,8 @@
 import { AuthConfig } from 'angular-oauth2-oidc';
+import { environment } from 'src/environments/environment';
 
 export const authConfig: AuthConfig = {
-  issuer: 'https://dev.thingoo.xyz/auth/realms/Thingoo',
+  issuer: environment.apiUrl + '/auth/realms/Thingoo',
   clientId: 'thingoo-webapp',
   responseType: 'code',
   redirectUri: window.location.origin,
