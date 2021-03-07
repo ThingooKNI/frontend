@@ -1,0 +1,46 @@
+.device-list-page-wrapper{
+    width: 100vw;
+    max-width: 1000px;
+}
+
+.device-list{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+
+.plus-button{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin-bottom: 25px;
+
+    &::before, &::after{
+        content: '';
+        position: absolute;
+        background-color: lightgray;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        border-radius: 4px;
+    }
+
+    &::before{
+        top:calc(50% - 3px);
+        height: 6px;
+        width: 100%;
+    }
+    &::after{
+        width: 6px;
+        height: 100%;
+
+    }
+}
+
+.no-devices{
+    text-align: center;
+}

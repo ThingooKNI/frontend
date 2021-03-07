@@ -5,6 +5,7 @@
     </a>
     <div class="header-section">
       <ng-container *ngIf="authService.isLoggedIn">
+        <a mat-stroked-button [routerLink]="'devices'">Devices</a>
         <a mat-stroked-button [routerLink]="'profile'">Profile</a>
         <a mat-stroked-button (click)="logout()">Logout</a>
       </ng-container>
