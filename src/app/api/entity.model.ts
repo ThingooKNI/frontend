@@ -1,0 +1,23 @@
+import { Injectable } from "@angular/core";
+import { Adapter } from "./adapter";
+import { MaterialIcon } from "./material-icon.model";
+
+export class Entity {
+  constructor(
+    public id: number,
+    public key: string,
+    public type: string,
+    public unitType: string,
+    public unitDisplayName: string,
+    public displayName?: string,
+    public icon?: MaterialIcon
+  ) {
+  }
+}
+
+@Injectable()
+export class EntityAdapter implements Adapter<Entity> {
+  adapt(item: any): Entity {
+    return new Entity(item.id, item.key, item.type, item.unitType, item.unitDisplayName, item.displayName, item.icon);
+  }
+}
