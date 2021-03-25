@@ -22,6 +22,7 @@
     cursor: pointer;
     margin: 0;
     overflow: auto;
+    user-select: none;
 
     &__h3 {
         margin-bottom: 5px;

@@ -4,10 +4,6 @@
         <h1>You have no devices at this moment.</h1>
     </mat-card>
     <div class="device-list">
-        <mat-card class="device-card add-device">
-            <div class="plus-button"></div>
-            <h3>Add new device</h3>
-        </mat-card>
         <app-device-card *ngFor="let device of devicesList" [device]="device"></app-device-card>
     </div>
 </div>
