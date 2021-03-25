@@ -1,7 +1,7 @@
-import { Entity } from "./entity.model";
+import { Entity, EntityAdapter } from "./entity.model";
 import { Injectable } from "@angular/core";
 import { Adapter } from "./adapter";
-import { MaterialIcon } from "./material-icon.model";
+import { MaterialIcon, MaterialIconAdapter } from "./material-icon.model";
 
 export class Device {
   constructor(
@@ -17,7 +17,11 @@ export class Device {
 
 @Injectable()
 export class DeviceAdapter implements Adapter<Device> {
+
+  constructor(private entityAdapter: EntityAdapter, private materialIconAdapter: MaterialIconAdapter) {
+  }
+
   adapt(item: any): Device {
-    return new Device(item.id, item.key, item.macAddress, item.entities, item.displayName, item.icon);
+    return new Device(item.id, item.key, item.macAddress, item.entities.map(this.entityAdapter.adapt), item.displayName, this.materialIconAdapter.adapt(item.icon));
   }
 }
