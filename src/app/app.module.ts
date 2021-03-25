@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MatRippleModule } from '@angular/material/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -41,6 +41,7 @@ import { DeviceDetailsComponent } from './pages/device-details/device-details.co
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AuthConfigModule,
+    MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class DeviceListComponent implements OnInit {
 
-  public fakeData: any = [
+  public devicesList: any = [
     {
       id:1,
       name:'Device 1',
@@ -29,7 +29,6 @@ export class DeviceListComponent implements OnInit {
   constructor(public readonly authService: AuthService) {}
 
   ngOnInit(): void {
-    console.log(this.authService);
   }
 
 }

@@ -1,4 +1,9 @@
-<mat-card class="device-card" [routerLink]="device.id">
+<div class="device-card-wrapper" matRipple>
+
+
+<mat-card class="device-card" [routerLink]="device.id"
+
+    >
         <div class="device-icon">
 
         </div>
@@ -9,3 +14,6 @@
             Entities: {{device.entities}}
         </p>
 </mat-card>
+
+</div>
+

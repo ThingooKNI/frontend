@@ -1,26 +1,26 @@
 <div class="device-details-page-wrapper">
     <mat-card class="device-details__section">
-        <div class="device-bacis-info">
-            <div class="device-bacis-info__first">
+        <div class="device-basic-info">
+            <div class="device-basic-info__first">
                 <div class="icon__wrapper">
                     <div class="icon">
 
                     </div>
                 </div>
                 <div class="text">
-                    <h2>{{fakeData.name}}</h2>
-                    <p>{{fakeData.entities.length}} <span class="gray-color">ENTITIES</span></p>
+                    <h2>{{device.name}}</h2>
+                    <p>{{device.entities.length}} <span class="gray-color">ENTITIES</span></p>
                 </div>
             </div>
-            <div class="device-bacis-info__second">
+            <div class="device-basic-info__second">
                 <p>
                     <span class="gray-color">KEY</span>
-                    {{fakeData.key}}
+                    {{device.key}}
                 </p>
 
                 <p>
                     <span class="gray-color">MAC</span>
-                    {{fakeData.mac}}
+                    {{device.mac}}
                 </p>
             </div>
         </div>
@@ -28,7 +28,7 @@
     <mat-card  class="device-entities device-details__section">
         <h1 class="entities-title">Entities:</h1>
         <div class="entity-list">
-            <mat-card class="entity-item" *ngFor="let entity of fakeData.entities">
+            <mat-card class="entity-item" *ngFor="let entity of device.entities">
                 <div class="icon"></div>
                 <h4>
                     {{entity.name}}

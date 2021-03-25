@@ -1,6 +1,6 @@
 
 <div class="device-list-page-wrapper">
-    <mat-card class="no-devices" *ngIf="fakeData.length == 0">
+    <mat-card class="no-devices" *ngIf="devicesList.length == 0">
         <h1>You have no devices at this moment.</h1>
     </mat-card>
     <div class="device-list">
@@ -8,6 +8,6 @@
             <div class="plus-button"></div>
             <h3>Add new device</h3>
         </mat-card>
-        <app-device-card *ngFor="let device of fakeData" [device]="device"></app-device-card>
+        <app-device-card *ngFor="let device of devicesList" [device]="device"></app-device-card>
     </div>
 </div>

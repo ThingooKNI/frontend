@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DeviceDetailsComponent implements OnInit {
 
-  public fakeData: any = {
+  public device: any = {
     id: 1,
     key: 'asd asd sghdthdry rf',
     mac: '22:44::gt::86:dw',
