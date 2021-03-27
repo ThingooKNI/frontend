@@ -1,14 +1,9 @@
 <div class="device-card-wrapper" matRipple>
-    <mat-card class="device-card" [routerLink]="device.id">
-        <div class="device-icon">
-
-        </div>
-        <h3 class="device-card__h3">
-            {{device.name}}
-        </h3>
-        <p class="device-card__p">
-            Entities: {{device.entities}}
-        </p>
-    </mat-card>
+  <mat-card class="device-card" [routerLink]="device.id">
+    <div class="device-icon"></div>
+    <h3 class="device-card__h3">
+      {{ device.name }}
+    </h3>
+    <p class="device-card__p">Entities: {{ device.entities }}</p>
+  </mat-card>
 </div>
-

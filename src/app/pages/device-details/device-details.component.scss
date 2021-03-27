@@ -1,79 +1,79 @@
 .device-details-page-wrapper {
-    width: 100vw;
-    max-width: 1000px;
+  width: 100vw;
+  max-width: 1000px;
 
-    mat-card.device-details__section {
-        padding: calc(16px + 1.5vw) calc(16px + 1.5vw);
-    }
+  mat-card.device-details__section {
+    padding: calc(16px + 1.5vw) calc(16px + 1.5vw);
+  }
 }
 
 .entity-list {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .gray-color {
-    color:lightgray;
+  color: lightgray;
 }
 
 .device-entities {
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 .device-basic-info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
 
-    &__first {
-        display: grid;
-        grid-template-columns: 65px calc(100% - 65px);
-        margin-right: 4vw;
+  &__first {
+    display: grid;
+    grid-template-columns: 65px calc(100% - 65px);
+    margin-right: 4vw;
 
-        h2 {
-            margin-bottom: 6px;
-            font-size: 28px;
-        }
+    h2 {
+      margin-bottom: 6px;
+      font-size: 28px;
     }
+  }
 
-    &__second {
-        span {
-            font-size: 18px;
-            font-weight: 500;
-            width:45px;
-            display: inline-block;
-        }
-        p {
-            font-size: 18px;
-        }
+  &__second {
+    span {
+      font-size: 18px;
+      font-weight: 500;
+      width: 45px;
+      display: inline-block;
     }
+    p {
+      font-size: 18px;
+    }
+  }
 }
 
 .entity-item {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 15px;
-    background-color: #6f7070;
-    width: 120px;
-    height:150px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  background-color: #6f7070;
+  width: 120px;
+  height: 150px;
 
-    h4 {
-        margin: 8px 0;
-    }
-    h3 {
-        margin-bottom: 8px;
-    }
+  h4 {
+    margin: 8px 0;
+  }
+  h3 {
+    margin-bottom: 8px;
+  }
 }
 
 .icon {
-    width:50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: lightgray;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: lightgray;
 }

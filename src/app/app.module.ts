@@ -41,7 +41,7 @@ import { DeviceDetailsComponent } from './pages/device-details/device-details.co
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AuthConfigModule,
-    MatRippleModule
+    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
