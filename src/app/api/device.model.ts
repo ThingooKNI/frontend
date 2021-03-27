@@ -15,7 +15,9 @@ export class Device {
   }
 }
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class DeviceAdapter implements Adapter<Device> {
 
   constructor(private entityAdapter: EntityAdapter, private materialIconAdapter: MaterialIconAdapter) {

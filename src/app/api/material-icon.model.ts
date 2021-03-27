@@ -10,7 +10,9 @@ export class MaterialIcon {
   }
 }
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class MaterialIconAdapter implements Adapter<MaterialIcon> {
   adapt(item: any): MaterialIcon | null {
     return item ? new MaterialIcon(item.name, item.iconKey, item.displayName) : null;

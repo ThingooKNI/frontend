@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Adapter } from "./adapter";
-import { MaterialIcon } from "./material-icon.model";
 
 export class Reading {
   constructor(
@@ -11,9 +10,11 @@ export class Reading {
   }
 }
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class ReadingAdapter implements Adapter<Reading> {
-  adapt(item: any): MaterialIcon | null {
+  adapt(item: any): Reading {
     return new Reading(item.id, item.value, new Date(item.timestamp));
   }
 }
