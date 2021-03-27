@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Adapter } from "./adapter";
-import { MaterialIcon } from "./material-icon.model";
+import { MaterialIcon, MaterialIconAdapter } from "./material-icon.model";
 
 export class Entity {
   constructor(
@@ -10,14 +10,18 @@ export class Entity {
     public unitType: string,
     public unitDisplayName: string,
     public displayName?: string,
-    public icon?: MaterialIcon
+    public icon?: MaterialIcon | null
   ) {
   }
 }
 
 @Injectable()
 export class EntityAdapter implements Adapter<Entity> {
-  adapt(item: any): Entity {
-    return new Entity(item.id, item.key, item.type, item.unitType, item.unitDisplayName, item.displayName, item.icon);
+
+  // constructor(private materialIconAdapter: MaterialIconAdapter) {
+  // }
+
+  adapt(item: any): Entity | null {
+    return new Entity(item.id, item.key, item.type, item.unitType, item.unitDisplayName, item.displayName, item.icon /*this.materialIconAdapter.adapt(item.icon)*/);
   }
 }

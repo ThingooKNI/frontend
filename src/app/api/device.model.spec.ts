@@ -1,11 +1,18 @@
 import { DeviceAdapter } from "./device.model";
 import { EntityAdapter } from "./entity.model";
 import { MaterialIconAdapter } from "./material-icon.model";
+import { TestBed } from "@angular/core/testing";
 
 describe("DeviceAdapter", () => {
   let deviceAdapter: DeviceAdapter;
+
   beforeEach(() => {
-    deviceAdapter = new DeviceAdapter(new EntityAdapter(), new MaterialIconAdapter());
+    TestBed.configureTestingModule({
+      imports: [],
+      providers: [MaterialIconAdapter, EntityAdapter, DeviceAdapter]
+    });
+
+    deviceAdapter = TestBed.inject(DeviceAdapter);
   });
 
   it("should adapt device from full JSON", () => {
@@ -36,7 +43,7 @@ describe("DeviceAdapter", () => {
       "    ]\n" +
       "}";
     let deviceObject = JSON.parse(json);
-    let device = deviceAdapter.adapt(deviceObject);
+    let device = deviceAdapter.adapt(deviceObject)!;
 
     expect(device.id).toBe(1);
     expect(device.key).toBe("test");
@@ -72,9 +79,8 @@ describe("DeviceAdapter", () => {
     expect(device.id).toBe(2);
     expect(device.key).toBe("testDevice3");
     expect(device.macAddress).toBe("00:00:00:00:00:00");
-    expect(device.displayName).toBeUndefined();
-    expect(device.icon).toBeUndefined();
+    expect(device.displayName).toBeNull();
+    expect(device.icon).toBeNull();
     expect(device.entities.length).toBe(0);
-    expect(device.entities[0].key).toBe("temp");
   });
 });

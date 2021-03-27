@@ -12,7 +12,7 @@ export class MaterialIcon {
 
 @Injectable()
 export class MaterialIconAdapter implements Adapter<MaterialIcon> {
-  adapt(item: any): MaterialIcon {
-    return new MaterialIcon(item.name, item.iconKey, item.displayName);
+  adapt(item: any): MaterialIcon | null {
+    return item ? new MaterialIcon(item.name, item.iconKey, item.displayName) : null;
   }
 }
