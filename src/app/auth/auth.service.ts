@@ -32,7 +32,7 @@ export class AuthService implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    if (this.isLoggedIn) return true;
+    if (this.isLoggedIn) {return true;}
     this.beginLoginFlow(state.url.substring(1));
     return false;
   }

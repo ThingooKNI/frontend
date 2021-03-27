@@ -3,9 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { AuthService } from './auth.service';
 
-export function initApp(authService: AuthService) {
-  return () => authService.initAuth();
-}
+export const initApp = (authService: AuthService) => () => authService.initAuth();
 
 @NgModule({
   imports: [HttpClientModule, OAuthModule.forRoot()],

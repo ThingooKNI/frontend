@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { Adapter } from "./adapter";
+import { Injectable } from '@angular/core';
+import { Adapter } from './adapter';
 
 export class Reading {
   constructor(
@@ -11,7 +11,7 @@ export class Reading {
 }
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class ReadingAdapter implements Adapter<Reading> {
   adapt(item: any): Reading {

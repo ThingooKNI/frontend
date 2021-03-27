@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
-import { Adapter } from "./adapter";
-import { MaterialIcon, MaterialIconAdapter } from "./material-icon.model";
+import { Injectable } from '@angular/core';
+import { Adapter } from './adapter';
+import { MaterialIcon, MaterialIconAdapter } from './material-icon.model';
 
 export class Entity {
   constructor(
@@ -16,7 +16,7 @@ export class Entity {
 }
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class EntityAdapter implements Adapter<Entity> {
 
@@ -24,6 +24,13 @@ export class EntityAdapter implements Adapter<Entity> {
   }
 
   adapt(item: any): Entity | null {
-    return new Entity(item.id, item.key, item.type, item.unitType, item.unitDisplayName, item.displayName, this.materialIconAdapter.adapt(item.icon));
+    return new Entity(
+      item.id,
+      item.key,
+      item.type,
+      item.unitType,
+      item.unitDisplayName,
+      item.displayName,
+      this.materialIconAdapter.adapt(item.icon));
   }
 }

@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { Adapter } from "./adapter";
+import { Injectable } from '@angular/core';
+import { Adapter } from './adapter';
 
 export class MaterialIcon {
   constructor(
@@ -11,7 +11,7 @@ export class MaterialIcon {
 }
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class MaterialIconAdapter implements Adapter<MaterialIcon> {
   adapt(item: any): MaterialIcon | null {
