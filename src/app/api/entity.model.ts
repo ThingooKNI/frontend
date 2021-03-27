@@ -18,10 +18,10 @@ export class Entity {
 @Injectable()
 export class EntityAdapter implements Adapter<Entity> {
 
-  // constructor(private materialIconAdapter: MaterialIconAdapter) {
-  // }
+  constructor(private materialIconAdapter: MaterialIconAdapter) {
+  }
 
   adapt(item: any): Entity | null {
-    return new Entity(item.id, item.key, item.type, item.unitType, item.unitDisplayName, item.displayName, item.icon /*this.materialIconAdapter.adapt(item.icon)*/);
+    return new Entity(item.id, item.key, item.type, item.unitType, item.unitDisplayName, item.displayName, this.materialIconAdapter.adapt(item.icon));
   }
 }
