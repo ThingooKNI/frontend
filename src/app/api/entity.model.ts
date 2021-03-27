@@ -11,17 +11,14 @@ export class Entity {
     public unitDisplayName: string,
     public displayName?: string,
     public icon?: MaterialIcon | null
-  ) {
-  }
+  ) {}
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EntityAdapter implements Adapter<Entity> {
-
-  constructor(private materialIconAdapter: MaterialIconAdapter) {
-  }
+  constructor(private materialIconAdapter: MaterialIconAdapter) {}
 
   adapt(item: any): Entity | null {
     return new Entity(
@@ -31,6 +28,7 @@ export class EntityAdapter implements Adapter<Entity> {
       item.unitType,
       item.unitDisplayName,
       item.displayName,
-      this.materialIconAdapter.adapt(item.icon));
+      this.materialIconAdapter.adapt(item.icon)
+    );
   }
 }

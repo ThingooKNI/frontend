@@ -6,12 +6,11 @@ export class Reading {
     public id: number,
     public value: string,
     public timestamp: Date
-  ) {
-  }
+  ) {}
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ReadingAdapter implements Adapter<Reading> {
   adapt(item: any): Reading {

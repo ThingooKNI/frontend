@@ -6,15 +6,16 @@ export class MaterialIcon {
     public name: string,
     public iconKey: string,
     public displayName: string
-  ) {
-  }
+  ) {}
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MaterialIconAdapter implements Adapter<MaterialIcon> {
   adapt(item: any): MaterialIcon | null {
-    return item ? new MaterialIcon(item.name, item.iconKey, item.displayName) : null;
+    return item
+      ? new MaterialIcon(item.name, item.iconKey, item.displayName)
+      : null;
   }
 }

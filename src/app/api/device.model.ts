@@ -11,17 +11,17 @@ export class Device {
     public entities: Entity[],
     public displayName?: string,
     public icon?: MaterialIcon | null
-  ) {
-  }
+  ) {}
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DeviceAdapter implements Adapter<Device> {
-
-  constructor(private entityAdapter: EntityAdapter, private materialIconAdapter: MaterialIconAdapter) {
-  }
+  constructor(
+    private entityAdapter: EntityAdapter,
+    private materialIconAdapter: MaterialIconAdapter
+  ) {}
 
   adapt(item: any): Device {
     return new Device(
@@ -30,6 +30,7 @@ export class DeviceAdapter implements Adapter<Device> {
       item.macAddress,
       item.entities.map(this.entityAdapter.adapt),
       item.displayName,
-      this.materialIconAdapter.adapt(item.icon));
+      this.materialIconAdapter.adapt(item.icon)
+    );
   }
 }

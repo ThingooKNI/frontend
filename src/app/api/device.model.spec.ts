@@ -9,14 +9,15 @@ describe('DeviceAdapter', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [],
-      providers: [MaterialIconAdapter, EntityAdapter, DeviceAdapter]
+      providers: [MaterialIconAdapter, EntityAdapter, DeviceAdapter],
     });
 
     deviceAdapter = TestBed.inject(DeviceAdapter);
   });
 
   it('should adapt device from full JSON', () => {
-    const json = '{\n' +
+    const json =
+      '{\n' +
       '    "id": 1,\n' +
       '    "key": "test",\n' +
       '    "macAddress": "c0:3e:ba:c3:50:0b",\n' +
@@ -70,11 +71,11 @@ describe('DeviceAdapter', () => {
       expect(device.entities[0].icon.iconKey).toBe('thermostat');
       expect(device.entities[0].icon.name).toBe('THERMOSTAT');
     }
-
   });
 
   it('should adapt device from JSON with optional null values', () => {
-    const json = '{\n' +
+    const json =
+      '{\n' +
       '  "id": 2,\n' +
       '  "key": "testDevice3",\n' +
       '  "macAddress": "00:00:00:00:00:00",\n' +
