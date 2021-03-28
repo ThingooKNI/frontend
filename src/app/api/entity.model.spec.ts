@@ -15,7 +15,8 @@ describe('EntityAdapter', () => {
   });
 
   it('should adapt entity from full JSON', () => {
-    const json = '{\n' +
+    const json =
+      '{\n' +
       '    "id": 1,\n' +
       '    "key": "temp",\n' +
       '    "displayName": "temperature",\n' +
@@ -48,7 +49,8 @@ describe('EntityAdapter', () => {
   });
 
   it('should adapt entity from JSON with optional null values', () => {
-    const json = '{\n' +
+    const json =
+      '{\n' +
       '  "id": 1,\n' +
       '  "key": "temp",\n' +
       '  "displayName": null,\n' +
