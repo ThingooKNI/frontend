@@ -10,7 +10,7 @@ export class Entity {
     public unitType: string,
     public unitDisplayName: string,
     public displayName?: string,
-    public icon?: Nullable<MaterialIcon>,
+    public icon?: Nullable<MaterialIcon>
   ) {}
 }
 
