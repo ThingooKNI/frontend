@@ -28,7 +28,7 @@ export class DeviceAdapter implements Adapter<Device> {
       item.id,
       item.key,
       item.macAddress,
-      item.entities.map(this.entityAdapter.adapt, this.entityAdapter),
+      item.entities.map((entity: any) => this.entityAdapter.adapt(entity)),
       item.displayName,
       this.materialIconAdapter.adapt(item.icon)
     );
