@@ -23,14 +23,16 @@ export class DeviceAdapter implements Adapter<Device> {
     private materialIconAdapter: MaterialIconAdapter
   ) {}
 
-  adapt(item: any): Device {
-    return new Device(
-      item.id,
-      item.key,
-      item.macAddress,
-      item.entities.map((entity: any) => this.entityAdapter.adapt(entity)),
-      item.displayName,
-      this.materialIconAdapter.adapt(item.icon)
-    );
+  adapt(item: any): Nullable<Device> {
+    return item
+      ? new Device(
+          item.id,
+          item.key,
+          item.macAddress,
+          item.entities.map((entity: any) => this.entityAdapter.adapt(entity)),
+          item.displayName,
+          this.materialIconAdapter.adapt(item.icon)
+        )
+      : null;
   }
 }

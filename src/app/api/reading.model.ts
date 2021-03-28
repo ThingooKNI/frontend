@@ -13,7 +13,9 @@ export class Reading {
   providedIn: 'root',
 })
 export class ReadingAdapter implements Adapter<Reading> {
-  adapt(item: any): Reading {
-    return new Reading(item.id, item.value, new Date(item.timestamp));
+  adapt(item: any): Nullable<Reading> {
+    return item
+      ? new Reading(item.id, item.value, new Date(item.timestamp))
+      : null;
   }
 }

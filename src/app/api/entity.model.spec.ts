@@ -33,18 +33,20 @@ describe('EntityAdapter', () => {
     const entity = entityAdapter.adapt(entityObject);
 
     expect(entity).toBeDefined();
-    expect(entity.id).toBe(1);
-    expect(entity.key).toBe('temp');
-    expect(entity.displayName).toBe('temperature');
-    expect(entity.type).toBe('SENSOR');
-    expect(entity.unitType).toBe('DECIMAL');
-    expect(entity.unitDisplayName).toBe('C');
-    expect(entity.icon).toBeDefined();
+    if (entity) {
+      expect(entity.id).toBe(1);
+      expect(entity.key).toBe('temp');
+      expect(entity.displayName).toBe('temperature');
+      expect(entity.type).toBe('SENSOR');
+      expect(entity.unitType).toBe('DECIMAL');
+      expect(entity.unitDisplayName).toBe('C');
+      expect(entity.icon).toBeDefined();
 
-    if (entity.icon) {
-      expect(entity.icon.iconKey).toBe('thermostat');
-      expect(entity.icon.displayName).toBe('temperature');
-      expect(entity.icon.name).toBe('THERMOSTAT');
+      if (entity.icon) {
+        expect(entity.icon.iconKey).toBe('thermostat');
+        expect(entity.icon.displayName).toBe('temperature');
+        expect(entity.icon.name).toBe('THERMOSTAT');
+      }
     }
   });
 
@@ -63,12 +65,22 @@ describe('EntityAdapter', () => {
     const entity = entityAdapter.adapt(entityObject);
 
     expect(entity).toBeDefined();
-    expect(entity.id).toBe(1);
-    expect(entity.key).toBe('temp');
-    expect(entity.displayName).toBeNull();
-    expect(entity.type).toBe('SENSOR');
-    expect(entity.unitType).toBe('DECIMAL');
-    expect(entity.unitDisplayName).toBe('C');
-    expect(entity.icon).toBeNull();
+    if (entity) {
+      expect(entity.id).toBe(1);
+      expect(entity.key).toBe('temp');
+      expect(entity.displayName).toBeNull();
+      expect(entity.type).toBe('SENSOR');
+      expect(entity.unitType).toBe('DECIMAL');
+      expect(entity.unitDisplayName).toBe('C');
+      expect(entity.icon).toBeNull();
+    }
+  });
+
+  it('should adapt null entity from null JSON', () => {
+    const json = 'null';
+    const entityObject = JSON.parse(json);
+    const entity = entityAdapter.adapt(entityObject);
+
+    expect(entity).toBeNull();
   });
 });

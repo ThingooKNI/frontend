@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { ReadingAdapter } from "./reading.model";
+import { ReadingAdapter } from './reading.model';
 
 describe('ReadingAdapter', () => {
   let readingAdapter: ReadingAdapter;
@@ -27,7 +27,7 @@ describe('ReadingAdapter', () => {
     if (reading != null) {
       expect(reading.id).toBe(1);
       expect(reading.value).toBe('2.0');
-      expect(reading.timestamp).toEqual(new Date("2021-03-21T23:55:56.42523"));
+      expect(reading.timestamp).toEqual(new Date('2021-03-21T23:55:56.42523'));
     }
   });
 

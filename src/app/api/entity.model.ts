@@ -20,15 +20,17 @@ export class Entity {
 export class EntityAdapter implements Adapter<Entity> {
   constructor(private materialIconAdapter: MaterialIconAdapter) {}
 
-  adapt(item: any): Entity {
-    return new Entity(
-      item.id,
-      item.key,
-      item.type,
-      item.unitType,
-      item.unitDisplayName,
-      item.displayName,
-      this.materialIconAdapter.adapt(item.icon)
-    );
+  adapt(item: any): Nullable<Entity> {
+    return item
+      ? new Entity(
+          item.id,
+          item.key,
+          item.type,
+          item.unitType,
+          item.unitDisplayName,
+          item.displayName,
+          this.materialIconAdapter.adapt(item.icon)
+        )
+      : null;
   }
 }
