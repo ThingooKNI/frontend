@@ -4,9 +4,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 @Component({
   selector: 'app-device-list',
   templateUrl: './device-list.component.html',
-  styleUrls: [
-    './device-list.component.scss'
-  ],
+  styleUrls: ['./device-list.component.scss'],
 })
 export class DeviceListComponent implements OnInit {
   public devicesList: any = [

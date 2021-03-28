@@ -29,7 +29,10 @@
   <mat-card class="device-entities device-details__section">
     <h1 class="entities-title">Entities:</h1>
     <div class="entity-list">
-      <mat-card class="entity-item mat-elevation-z2" *ngFor="let entity of device.entities">
+      <mat-card
+        class="entity-item mat-elevation-z2"
+        *ngFor="let entity of device.entities"
+      >
         <div class="icon"></div>
         <h4>
           {{ entity.name }}
