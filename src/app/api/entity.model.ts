@@ -20,7 +20,7 @@ export class Entity {
 export class EntityAdapter implements Adapter<Entity> {
   constructor(private materialIconAdapter: MaterialIconAdapter) {}
 
-  adapt(item: any): Nullable<Entity> {
+  adapt(item: any): Entity {
     return new Entity(
       item.id,
       item.key,
