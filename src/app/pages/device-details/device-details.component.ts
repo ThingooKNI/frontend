@@ -25,11 +25,7 @@ export class DeviceDetailsComponent implements OnInit {
     ],
   };
 
-  constructor(private route: ActivatedRoute) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      console.log(params?.id);
-    });
-  }
+  ngOnInit(): void {}
 }
