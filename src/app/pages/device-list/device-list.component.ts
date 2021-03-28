@@ -5,8 +5,7 @@ import { AuthService } from 'src/app/auth/auth.service';
   selector: 'app-device-list',
   templateUrl: './device-list.component.html',
   styleUrls: [
-    './device-list.component.scss',
-    './device-card/device-card.component.scss',
+    './device-list.component.scss'
   ],
 })
 export class DeviceListComponent implements OnInit {
