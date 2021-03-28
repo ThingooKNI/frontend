@@ -10,7 +10,7 @@ export class Device {
     public macAddress: string,
     public entities: Entity[],
     public displayName?: string,
-    public icon?: MaterialIcon | null
+    public icon?: Nullable<MaterialIcon>
   ) {}
 }
 

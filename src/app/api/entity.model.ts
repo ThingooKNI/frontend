@@ -10,7 +10,7 @@ export class Entity {
     public unitType: string,
     public unitDisplayName: string,
     public displayName?: string,
-    public icon?: MaterialIcon | null
+    public icon?: Nullable<MaterialIcon>,
   ) {}
 }
 
@@ -20,7 +20,7 @@ export class Entity {
 export class EntityAdapter implements Adapter<Entity> {
   constructor(private materialIconAdapter: MaterialIconAdapter) {}
 
-  adapt(item: any): Entity | null {
+  adapt(item: any): Nullable<Entity> {
     return new Entity(
       item.id,
       item.key,

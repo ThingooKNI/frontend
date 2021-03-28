@@ -13,7 +13,7 @@ export class MaterialIcon {
   providedIn: 'root',
 })
 export class MaterialIconAdapter implements Adapter<MaterialIcon> {
-  adapt(item: any): MaterialIcon | null {
+  adapt(item: any): Nullable<MaterialIcon> {
     return item
       ? new MaterialIcon(item.name, item.iconKey, item.displayName)
       : null;
