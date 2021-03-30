@@ -26,6 +26,7 @@ jobs:
           VALIDATE_TYPESCRIPT_STANDARD: false
           VALIDATE_HTML: false
           VALIDATE_CSS: false
+          JSCPD_CONFIG_FILE: .jscpd.json
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
