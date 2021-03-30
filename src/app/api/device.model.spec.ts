@@ -52,7 +52,7 @@ describe('DeviceAdapter', () => {
       expect(device.key).toBe('test');
       expect(device.macAddress).toBe('c0:3e:ba:c3:50:0b');
       expect(device.displayName).toBe('test');
-      expect(device.icon).toBeDefined();
+      expect(device.icon).toBeTruthy();
 
       if (device.icon) {
         expect(device.icon.iconKey).toBe('thermostat');
@@ -66,7 +66,7 @@ describe('DeviceAdapter', () => {
       expect(device.entities[0].type).toBe('SENSOR');
       expect(device.entities[0].unitType).toBe('DECIMAL');
       expect(device.entities[0].unitDisplayName).toBe('C');
-      expect(device.entities[0].icon).toBeDefined();
+      expect(device.entities[0].icon).toBeTruthy();
 
       if (device.entities[0].icon) {
         expect(device.entities[0].icon.iconKey).toBe('thermostat');

@@ -40,7 +40,7 @@ describe('EntityAdapter', () => {
       expect(entity.type).toBe('SENSOR');
       expect(entity.unitType).toBe('DECIMAL');
       expect(entity.unitDisplayName).toBe('C');
-      expect(entity.icon).toBeDefined();
+      expect(entity.icon).toBeTruthy();
 
       if (entity.icon) {
         expect(entity.icon.iconKey).toBe('thermostat');
