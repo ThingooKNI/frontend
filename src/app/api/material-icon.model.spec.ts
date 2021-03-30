@@ -24,7 +24,7 @@ describe('MaterialIconAdapter', () => {
     const materialIcon = materialIconAdapter.adapt(materialIconObject);
 
     expect(materialIcon).toBeTruthy();
-    if (materialIcon != null) {
+    if (materialIcon) {
       expect(materialIcon.iconKey).toBe('thermostat');
       expect(materialIcon.displayName).toBe('temperature');
       expect(materialIcon.name).toBe('THERMOSTAT');

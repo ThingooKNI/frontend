@@ -24,7 +24,7 @@ describe('ReadingAdapter', () => {
     const reading = readingAdapter.adapt(readingObject);
 
     expect(reading).toBeTruthy();
-    if (reading != null) {
+    if (reading) {
       expect(reading.id).toBe(1);
       expect(reading.value).toBe('2.0');
       expect(reading.timestamp).toEqual(new Date('2021-03-21T23:55:56.42523'));
