@@ -32,7 +32,7 @@ describe('EntityAdapter', () => {
     const entityObject = JSON.parse(json);
     const entity = entityAdapter.adapt(entityObject);
 
-    expect(entity).toBeDefined();
+    expect(entity).toBeTruthy();
     if (entity) {
       expect(entity.id).toBe(1);
       expect(entity.key).toBe('temp');
@@ -64,7 +64,7 @@ describe('EntityAdapter', () => {
     const entityObject = JSON.parse(json);
     const entity = entityAdapter.adapt(entityObject);
 
-    expect(entity).toBeDefined();
+    expect(entity).toBeTruthy();
     if (entity) {
       expect(entity.id).toBe(1);
       expect(entity.key).toBe('temp');

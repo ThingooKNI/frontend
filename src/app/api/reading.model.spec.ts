@@ -23,7 +23,7 @@ describe('ReadingAdapter', () => {
     const readingObject = JSON.parse(json);
     const reading = readingAdapter.adapt(readingObject);
 
-    expect(reading).toBeDefined();
+    expect(reading).toBeTruthy();
     if (reading != null) {
       expect(reading.id).toBe(1);
       expect(reading.value).toBe('2.0');

@@ -46,7 +46,7 @@ describe('DeviceAdapter', () => {
     const deviceObject = JSON.parse(json);
     const device = deviceAdapter.adapt(deviceObject);
 
-    expect(device).toBeDefined();
+    expect(device).toBeTruthy();
     if (device) {
       expect(device.id).toBe(1);
       expect(device.key).toBe('test');
@@ -88,7 +88,7 @@ describe('DeviceAdapter', () => {
     const deviceObject = JSON.parse(json);
     const device = deviceAdapter.adapt(deviceObject);
 
-    expect(device).toBeDefined();
+    expect(device).toBeTruthy();
     if (device) {
       expect(device.id).toBe(2);
       expect(device.key).toBe('testDevice3');
