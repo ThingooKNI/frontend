@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Device } from 'src/app/api/device.model';
 
 @Component({
   selector: 'app-device-card',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./device-card.component.scss'],
 })
 export class DeviceCardComponent implements OnInit {
-  @Input() device: any;
+  @Input() device!: Device;
 
   constructor() {}
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
+import { Device } from 'src/app/api/device.model';
+import { Entity } from 'src/app/api/entity.model';
 
 @Component({
   selector: 'app-device-list',
@@ -7,22 +9,29 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./device-list.component.scss'],
 })
 export class DeviceListComponent implements OnInit {
-  public devicesList: any = [
-    {
-      id: 1,
-      name: 'Device 1',
-      entities: 5,
-    },
-    {
-      id: 2,
-      name: 'Device 2',
-      entities: 5,
-    },
-    {
-      id: 3,
-      name: 'Device 3',
-      entities: 0,
-    },
+  public devicesList: Device[] = [
+    new Device(
+      1,
+      'example key',
+      '11:22:33:44:55:66:77',
+      [
+        new Entity(1, 'key1', 'SENSOR', 'DECIMAL', 'C', 'Entity 1'),
+        new Entity(2, 'key1', 'SENSOR', 'DECIMAL', 'C', 'Entity 2'),
+        new Entity(3, 'key1', 'SENSOR', 'DECIMAL', 'C', 'Entity 3'),
+      ],
+      'Device 1'
+    ),
+    new Device(
+      2,
+      'example key',
+      '11:22:33:44:55:66:77',
+      [
+        new Entity(1, 'key1', 'SENSOR', 'DECIMAL', 'C', 'Entity 1'),
+        new Entity(2, 'key1', 'SENSOR', 'DECIMAL', 'C', 'Entity 2'),
+        new Entity(3, 'key1', 'SENSOR', 'DECIMAL', 'C', 'Entity 3'),
+      ],
+      'Device 2'
+    )
   ];
 
   constructor(public readonly authService: AuthService) {}

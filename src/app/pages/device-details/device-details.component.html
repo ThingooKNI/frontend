@@ -6,7 +6,7 @@
           <div class="icon"></div>
         </div>
         <div class="text">
-          <h2>{{ device.name }}</h2>
+          <h2>{{ device.displayName }}</h2>
           <p>
             {{ device.entities.length }}
             <span class="gray-color">ENTITIES</span>
@@ -21,7 +21,7 @@
 
         <p>
           <span class="gray-color">MAC</span>
-          {{ device.mac }}
+          {{ device.macAddress }}
         </p>
       </div>
     </div>
@@ -35,7 +35,7 @@
       >
         <div class="icon"></div>
         <h4>
-          {{ entity.name }}
+          {{ entity.displayName }}
         </h4>
         <h3>92 dB</h3>
         <h5>13 minutes ago</h5>
