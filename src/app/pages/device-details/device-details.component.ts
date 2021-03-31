@@ -19,7 +19,7 @@ export class DeviceDetailsComponent implements OnInit {
       new Entity(3, 'key1', 'SENSOR', 'DECIMAL', 'C', 'Entity 3'),
     ],
     'Example device'
-  )
+  );
 
   constructor() {}
 

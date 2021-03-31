@@ -31,7 +31,7 @@ export class DeviceListComponent implements OnInit {
         new Entity(3, 'key1', 'SENSOR', 'DECIMAL', 'C', 'Entity 3'),
       ],
       'Device 2'
-    )
+    ),
   ];
 
   constructor(public readonly authService: AuthService) {}
