@@ -5,7 +5,7 @@
         <div class="icon__wrapper">
           <div class="icon"></div>
         </div>
-        <div class="text">
+        <div class="text__wrapper header-flex-column">
           <h2>{{ device.displayName }}</h2>
           <p>
             {{ device.entities.length }}
@@ -13,16 +13,16 @@
           </p>
         </div>
       </div>
-      <div class="device-basic-info__second">
-        <p>
+      <div class="device-basic-info__second header-flex-column">
+        <div>
           <span class="gray-color">KEY</span>
           {{ device.key }}
-        </p>
+        </div>
 
-        <p>
+        <div>
           <span class="gray-color">MAC</span>
           {{ device.macAddress }}
-        </p>
+        </div>
       </div>
     </div>
   </mat-card>
