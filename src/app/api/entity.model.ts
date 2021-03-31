@@ -37,8 +37,8 @@ export class EntityAdapter implements Adapter<Entity> {
       ? new Entity(
           item.id,
           item.key,
-          EntityType[item.type as keyof typeof EntityType],
-          UnitType[item.unitType as keyof typeof UnitType],
+          EntityType[item.type as EntityType],
+          UnitType[item.unitType as UnitType],
           item.unitDisplayName,
           item.displayName,
           this.materialIconAdapter.adapt(item.icon)
