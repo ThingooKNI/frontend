@@ -1,4 +1,4 @@
-import { EntityAdapter } from './entity.model';
+import { EntityAdapter, EntityType, UnitType } from './entity.model';
 import { MaterialIconAdapter } from './material-icon.model';
 import { TestBed } from '@angular/core/testing';
 
@@ -37,8 +37,8 @@ describe('EntityAdapter', () => {
       expect(entity.id).toBe(1);
       expect(entity.key).toBe('temp');
       expect(entity.displayName).toBe('temperature');
-      expect(entity.type).toBe('SENSOR');
-      expect(entity.unitType).toBe('DECIMAL');
+      expect(entity.type).toBe(EntityType.SENSOR);
+      expect(entity.unitType).toBe(UnitType.DECIMAL);
       expect(entity.unitDisplayName).toBe('C');
       expect(entity.icon).toBeTruthy();
 
@@ -69,8 +69,8 @@ describe('EntityAdapter', () => {
       expect(entity.id).toBe(1);
       expect(entity.key).toBe('temp');
       expect(entity.displayName).toBeNull();
-      expect(entity.type).toBe('SENSOR');
-      expect(entity.unitType).toBe('DECIMAL');
+      expect(entity.type).toBe(EntityType.SENSOR);
+      expect(entity.unitType).toBe(UnitType.DECIMAL);
       expect(entity.unitDisplayName).toBe('C');
       expect(entity.icon).toBeNull();
     }
@@ -82,5 +82,31 @@ describe('EntityAdapter', () => {
     const entity = entityAdapter.adapt(entityObject);
 
     expect(entity).toBeNull();
+  });
+
+  it('should adapt entity with undefined enum fields from JSON with invalid enum values', () => {
+    const json =
+      '{\n' +
+      '  "id": 1,\n' +
+      '  "key": "temp",\n' +
+      '  "displayName": null,\n' +
+      '  "type": "NOT_EXISTING",\n' +
+      '  "unitType": "NOT_EXISTING",\n' +
+      '  "unitDisplayName": "C",\n' +
+      '  "icon": null\n' +
+      '}';
+    const entityObject = JSON.parse(json);
+    const entity = entityAdapter.adapt(entityObject);
+
+    expect(entity).toBeTruthy();
+    if (entity) {
+      expect(entity.id).toBe(1);
+      expect(entity.key).toBe('temp');
+      expect(entity.displayName).toBeNull();
+      expect(entity.type).toBeUndefined();
+      expect(entity.unitType).toBeUndefined();
+      expect(entity.unitDisplayName).toBe('C');
+      expect(entity.icon).toBeNull();
+    }
   });
 });
