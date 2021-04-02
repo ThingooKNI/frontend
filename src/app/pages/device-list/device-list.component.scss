@@ -1,0 +1,18 @@
+.device-list {
+  &-page-wrapper {
+    width: 100vw;
+    max-width: 1000px;
+  }
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+}
+
+.no-devices {
+  text-align: center;
+}
