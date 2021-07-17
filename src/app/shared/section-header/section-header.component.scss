@@ -1,0 +1,7 @@
+@import "~src/variables.scss";
+
+.section-header {
+    width: 100%;
+    background-color: darken($thingoo-background, 3%);
+    padding: 70px 0;
+}

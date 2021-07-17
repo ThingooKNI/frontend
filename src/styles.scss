@@ -45,9 +45,11 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.wrapper {
-  max-width: 1060px;
+.content-wrapper {
+  // TODO: mobile support here
+  width: 80%;
   margin: 0 auto;
+  max-width: 1060px;
 }
 
 .mat-app-background {

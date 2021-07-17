@@ -18,6 +18,7 @@ import { AuthConfigModule } from './auth/auth-config.module';
 import { DeviceListComponent } from './pages/device-list/device-list.component';
 import { DeviceCardComponent } from './pages/device-list/device-card/device-card.component';
 import { DeviceDetailsComponent } from './pages/device-details/device-details.component';
+import { SectionHeaderComponent } from './shared/section-header/section-header.component';
 
 @NgModule({
   declarations: [
