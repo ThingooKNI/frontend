@@ -21,6 +21,7 @@ import { DeviceDetailsComponent } from './pages/device-details/device-details.co
 import { SectionHeaderComponent } from './shared/section-header/section-header.component';
 import { DeviceIconComponent } from './shared/device-icon/device-icon.component';
 import { ValueRowComponent } from './shared/value-row/value-row.component';
+import { EntityCardComponent } from './shared/entity-card/entity-card.component';
 
 @NgModule({
   declarations: [
