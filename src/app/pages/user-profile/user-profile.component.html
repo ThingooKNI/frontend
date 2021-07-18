@@ -1,6 +1,6 @@
-<mat-card *ngIf="authService.userProfile">
-  <mat-card-content>
-    <h1>{{ authService.userProfile.preferred_username }}</h1>
-    <p>E-mail: {{ authService.userProfile.email }}</p>
-  </mat-card-content>
-</mat-card>
+<app-section-header iconName="account_circle" sectionTitle="Profile">
+  <div class="user-profile">
+    <app-value-row [nameWidth]="75" name="nick" [value]="authService.userProfile.preferred_username"></app-value-row>
+    <app-value-row [nameWidth]="75" name="email" [value]="authService.userProfile.email"></app-value-row>
+  </div>
+</app-section-header>
