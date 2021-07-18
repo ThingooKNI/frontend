@@ -1,23 +1,38 @@
-<app-section-header iconName="sensors" [isExpanded]="true" class="device-details__header">
-    <div class="section basic-info">
-      <span class="device-name">
-        {{ device.displayName }}
-      </span>
-      <div class="device-entities">
-        {{ device.entities.length }}
-        <span class="entities-text">ENTITIES</span>
-      </div>
+<app-section-header
+  iconName="sensors"
+  [isExpanded]="true"
+  class="device-details__header"
+>
+  <div class="section basic-info">
+    <span class="device-name">
+      {{ device.displayName }}
+    </span>
+    <div class="device-entities">
+      {{ device.entities.length }}
+      <span class="entities-text">ENTITIES</span>
     </div>
-    <div class="section spacer"></div>
-    <div class="section details-info">
-      <app-value-row name="key" [value]="device.key" [nameWidth]=50></app-value-row>
-      <app-value-row name="mac" [value]="device.macAddress" [nameWidth]=50></app-value-row>
-    </div>
+  </div>
+  <div class="section spacer"></div>
+  <div class="section details-info">
+    <app-value-row
+      name="key"
+      [value]="device.key"
+      [nameWidth]="50"
+    ></app-value-row>
+    <app-value-row
+      name="mac"
+      [value]="device.macAddress"
+      [nameWidth]="50"
+    ></app-value-row>
+  </div>
 </app-section-header>
 
 <div class="device-details__entities content-wrapper padded-content">
   <h1 class="entities-header">Entities:</h1>
   <div class="entities-list">
-    <app-entity-card *ngFor="let entity of device.entities" [entity]="entity"></app-entity-card>
+    <app-entity-card
+      *ngFor="let entity of device.entities"
+      [entity]="entity"
+    ></app-entity-card>
   </div>
 </div>

@@ -1,24 +1,24 @@
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 @import "~src/variables.scss";
 @import "~src/mixins.scss";
 
 .device-card {
-    padding: 30px;
+  padding: 30px;
 
-    @include mat-card-hover;
+  @include mat-card-hover;
 
-    &__content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    &__title {
-        margin-top: 30px !important;
-    }
+  &__title {
+    margin-top: 30px !important;
+  }
 
-    &__subtitle {
-        color: darken($color: $thingoo-text, $amount: 30%);
-        font-size: 13px;
-    }
+  &__subtitle {
+    color: darken($color: $thingoo-text, $amount: 30%);
+    font-size: 13px;
+  }
 }

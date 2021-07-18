@@ -1,10 +1,14 @@
 <mat-card class="entity-card">
-    <mat-card-content class="entity-card__content">
-        <app-device-icon class="entity-card__icon" iconName="keyboard_voice" [size]=70></app-device-icon>
-        <mat-card-subtitle class="entity-card__name">{{ entity.displayName }}</mat-card-subtitle>
-        <mat-card-title class="entity-card__value">24 dB</mat-card-title>
-        <div class="entity-card__timestamp">
-            42 minutes ago
-        </div>
-    </mat-card-content>
+  <mat-card-content class="entity-card__content">
+    <app-device-icon
+      class="entity-card__icon"
+      iconName="keyboard_voice"
+      [size]="70"
+    ></app-device-icon>
+    <mat-card-subtitle class="entity-card__name">{{
+      entity.displayName
+    }}</mat-card-subtitle>
+    <mat-card-title class="entity-card__value">24 dB</mat-card-title>
+    <div class="entity-card__timestamp">42 minutes ago</div>
+  </mat-card-content>
 </mat-card>
