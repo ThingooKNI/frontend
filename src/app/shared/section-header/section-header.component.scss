@@ -1,0 +1,36 @@
+@import "~src/variables.scss";
+
+.section-header {
+  width: 100%;
+  padding: 35px 0;
+  background-color: darken($thingoo-background, 5%);
+
+  &.expanded {
+    padding: 60px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+
+    color: $thingoo-text;
+
+    .section-title {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .title-text {
+        font-size: 26px;
+        font-weight: 300;
+      }
+
+      .subtitle-text {
+        font-size: 18px;
+        color: darken($color: $thingoo-text, $amount: 40%);
+      }
+    }
+  }
+}

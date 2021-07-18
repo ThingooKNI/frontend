@@ -16,8 +16,12 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { AuthConfigModule } from './auth/auth-config.module';
 import { DeviceListComponent } from './pages/device-list/device-list.component';
-import { DeviceCardComponent } from './pages/device-list/device-card/device-card.component';
+import { DeviceCardComponent } from './shared/device-card/device-card.component';
 import { DeviceDetailsComponent } from './pages/device-details/device-details.component';
+import { SectionHeaderComponent } from './shared/section-header/section-header.component';
+import { DeviceIconComponent } from './shared/device-icon/device-icon.component';
+import { ValueRowComponent } from './shared/value-row/value-row.component';
+import { EntityCardComponent } from './shared/entity-card/entity-card.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,10 @@ import { DeviceDetailsComponent } from './pages/device-details/device-details.co
     DeviceListComponent,
     DeviceCardComponent,
     DeviceDetailsComponent,
+    SectionHeaderComponent,
+    DeviceIconComponent,
+    ValueRowComponent,
+    EntityCardComponent,
   ],
   imports: [
     MatToolbarModule,

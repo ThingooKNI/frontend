@@ -1,0 +1,12 @@
+<div class="section-header" [class.expanded]="isExpanded">
+  <div class="section-header__content content-wrapper">
+    <app-device-icon [iconName]="iconName" [size]="80"></app-device-icon>
+    <div class="section-title" *ngIf="sectionTitle">
+      <div class="title-text">{{ sectionTitle }}</div>
+      <div class="subtitle-text" *ngIf="sectionSubtitle">
+        {{ sectionSubtitle }}
+      </div>
+    </div>
+    <ng-content></ng-content>
+  </div>
+</div>

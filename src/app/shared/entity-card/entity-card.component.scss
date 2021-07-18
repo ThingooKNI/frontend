@@ -1,0 +1,30 @@
+@import "~@angular/material/theming";
+@import "~src/variables.scss";
+@import "~src/mixins.scss";
+
+.entity-card {
+  padding: 20px 35px;
+
+  @include mat-card-hover;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__name {
+    margin-top: 12px !important;
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+
+  &__value {
+    font-size: 24px;
+  }
+
+  &__timestamp {
+    color: darken($color: $thingoo-text, $amount: 30%);
+    font-size: 13px;
+  }
+}
