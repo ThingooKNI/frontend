@@ -7,9 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SectionHeaderComponent implements OnInit {
   @Input() iconName!: string;
-  @Input() sectionTitle: string = '';
-  @Input() sectionSubtitle: string = '';
-  @Input() isExpanded: boolean = false;
+  @Input() sectionTitle = '';
+  @Input() sectionSubtitle = '';
+  @Input() isExpanded = false;
 
   constructor() { }
 
