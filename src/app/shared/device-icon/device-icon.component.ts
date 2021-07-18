@@ -8,7 +8,6 @@ import { MaterialIcon } from 'src/app/api/material-icon.model';
 })
 export class DeviceIconComponent implements OnInit {
   @Input() size!: number;
-  // TOOD: use MaterialIcon here
   @Input() iconName!: string;
 
   constructor() { }
