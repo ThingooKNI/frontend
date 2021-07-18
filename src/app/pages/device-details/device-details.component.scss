@@ -37,8 +37,6 @@
   }
 
   &__entities {
-    padding: $section-padding 0;
-
     .entities-header {
       color: darken($color: $thingoo-text, $amount: 10%);
       font-weight: 400;

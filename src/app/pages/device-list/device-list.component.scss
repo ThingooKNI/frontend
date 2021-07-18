@@ -1,8 +1,6 @@
 @import "~src/variables.scss";
 
 .device-list {
-  padding: $section-padding 0;
-
   &__content {
     display: flex;
     flex-direction: row;
