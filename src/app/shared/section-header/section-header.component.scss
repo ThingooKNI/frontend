@@ -4,4 +4,11 @@
     width: 100%;
     background-color: darken($thingoo-background, 5%);
     padding: 70px 0;
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        color: $thingoo-text;
+    }
 }
