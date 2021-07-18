@@ -48,7 +48,7 @@
     .entities-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: $elements-grid-gap;
     }
   }
 }

@@ -1,0 +1,10 @@
+<mat-card class="device-card" [routerLink]="device.id.toString()" matRipple>
+    <mat-card-content class="device-card__content">
+        <app-device-icon class="device-card__icon" iconName="sensors" [size]=70></app-device-icon>
+        <mat-card-title class="device-card__title">{{ device.displayName }}</mat-card-title>
+        <mat-card-subtitle class="device-card__subtitle">entities: {{ device.entities.length }}</mat-card-subtitle>
+    </mat-card-content>
+    
+    <!-- This is needed to prevent the ripple animation from resizing the card. -->
+    <mat-card-footer></mat-card-footer>
+</mat-card>

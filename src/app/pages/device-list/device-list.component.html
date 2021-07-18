@@ -1,8 +1,10 @@
-<div class="device-list-page-wrapper">
-  <mat-card class="no-devices" *ngIf="devicesList.length == 0">
-    <h1>You have no devices at this moment.</h1>
-  </mat-card>
-  <div class="device-list">
+<app-section-header sectionTitle="Devices" iconName="build"
+                    sectionSubtitle="See which devices are currently connected.">
+</app-section-header>
+
+<div class="device-list content-wrapper">
+  <div class="device-list__content">
+    <h1 class="device-list__text" *ngIf="devicesList.length == 0">You have no devices at this moment.</h1>
     <app-device-card
       *ngFor="let device of devicesList"
       [device]="device"

@@ -1,18 +1,17 @@
+@import "~src/variables.scss";
+
 .device-list {
-  &-page-wrapper {
-    width: 100vw;
-    max-width: 1000px;
+  padding: $section-padding 0;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $elements-grid-gap;
   }
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 20px;
-}
-
-.no-devices {
-  text-align: center;
+  &__text {
+    color: darken($color: $thingoo-text, $amount: 10%);
+  }
 }
