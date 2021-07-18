@@ -1,14 +1,7 @@
 @import "~src/variables.scss";
 
-$section-padding: 40px;
-
 .device-details {
   &__header {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    color: $thingoo-text;
-
     .section {
       display: flex;
       flex-direction: column;
@@ -39,7 +32,6 @@ $section-padding: 40px;
     }
 
     .details-info {
-      // TODO:!
       gap: 8px;
     }
   }
