@@ -2,11 +2,11 @@
 
 .section-header {
     width: 100%;
-    padding: 60px 0;
+    padding: 35px 0;
     background-color: darken($thingoo-background, 5%);
 
-    &.compact {
-        padding: 35px 0;
+    &.expanded {
+        padding: 60px 0;
     }
 
     &__content {
