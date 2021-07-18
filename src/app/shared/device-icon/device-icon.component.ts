@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MaterialIcon } from 'src/app/api/material-icon.model';
 
 @Component({
   selector: 'app-device-icon',
