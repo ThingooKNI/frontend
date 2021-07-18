@@ -1,43 +1,26 @@
 <app-section-header>
-  <div class="device-basic-info">
-    <div class="device-basic-info__first">
-      <div class="icon__wrapper">
-        <div class="icon"></div>
-      </div>
-      <div class="text__wrapper header-flex-column">
-        <h2>{{ device.displayName }}</h2>
-        <p>
+  <div class="device-details__header">
+      <app-device-icon iconName="sensors" [size]=80></app-device-icon>
+      <div class="section basic-info">
+        <span class="device-name">
+          {{ device.displayName }}
+        </span>
+        <div class="device-entities">
           {{ device.entities.length }}
-          <span class="gray-color">ENTITIES</span>
-        </p>
+          <span class="entities-text">ENTITIES</span>
+        </div>
       </div>
-    </div>
-    <div class="device-basic-info__second header-flex-column">
-      <div>
-        <span class="gray-color">KEY</span>
-        {{ device.key }}
+      <div class="section spacer"></div>
+      <div class="section details-info">
+        <app-value-row name="key" [value]="device.key" [nameWidth]=50></app-value-row>
+        <app-value-row name="mac" [value]="device.macAddress" [nameWidth]=50></app-value-row>
       </div>
-
-      <div>
-        <span class="gray-color">MAC</span>
-        {{ device.macAddress }}
-      </div>
-    </div>
   </div>
 </app-section-header>
-<mat-card class="device-entities device-details__section">
-  <h1 class="entities-title">Entities:</h1>
-  <div class="entity-list">
-    <mat-card
-      class="entity-item mat-elevation-z2"
-      *ngFor="let entity of device.entities"
-    >
-      <div class="icon"></div>
-      <h4>
-        {{ entity.displayName }}
-      </h4>
-      <h3>92 dB</h3>
-      <h5>13 minutes ago</h5>
-    </mat-card>
+
+<div class="device-details__entities content-wrapper">
+  <h1 class="entities-header">Entities:</h1>
+  <div class="entities-list">
+    <app-entity-card *ngFor="let entity of device.entities" [entity]="entity"></app-entity-card>
   </div>
-</mat-card>
+</div>

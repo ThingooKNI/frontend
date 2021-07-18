@@ -1,100 +1,62 @@
-.device-details-page-wrapper {
-  width: 100vw;
-  max-width: 1000px;
+@import "~src/variables.scss";
 
-  mat-card.device-details__section {
-    padding: calc(16px + 1.5vw) calc(16px + 1.5vw);
-  }
-}
+$section-padding: 40px;
 
-.entity-list {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.gray-color {
-  color: lightgray;
-}
-
-.device-entities {
-  margin-top: 12px;
-}
-
-.device-basic-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-
-  .header-flex-column {
+.device-details {
+  &__header {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+    flex-direction: row;
+    gap: 15px;
+    color: $thingoo-text;
 
-  p {
-    margin: 0px;
-  }
-
-  &__first {
-    display: grid;
-    grid-template-columns: 65px calc(100% - 65px);
-    margin-right: 4vw;
-
-    .text__wrapper {
-      margin-left: 5px;
+    .section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
     }
 
-    h2 {
-      margin-bottom: 0px;
-      font-size: 28px;
+    .basic-info {
+      .device-name {
+        font-size: 26px;
+        font-weight: 300;
+      }
+
+      .device-entities {
+        font-size: 18px;
+        font-weight: 500;
+        color: darken($color: $thingoo-text, $amount: 20%);
+
+        .entities-text {
+          margin-left: 3px;
+          color: darken($color: $thingoo-text, $amount: 40%);
+        }
+      }
+    }
+
+    .spacer {
+      width: 6vw;
+    }
+
+    .details-info {
+      // TODO:!
+      gap: 8px;
     }
   }
 
-  &__second {
-    span {
-      font-size: 18px;
-      font-weight: 500;
-      width: 45px;
-      display: inline-block;
+  &__entities {
+    padding: $section-padding 0;
+
+    .entities-header {
+      color: darken($color: $thingoo-text, $amount: 10%);
+      font-weight: 400;
+      margin-bottom: $section-padding;
     }
-    p {
-      font-size: 18px;
+
+    .entities-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
     }
   }
-}
-
-.entity-item {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 120px;
-
-  &::before {
-    content: " ";
-    background-color: rgba($color: #fff, $alpha: 0.07);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-  }
-
-  h4 {
-    margin: 8px 0;
-  }
-  h3 {
-    margin-bottom: 8px;
-  }
-}
-
-.icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: lightgray;
 }

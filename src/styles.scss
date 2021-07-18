@@ -35,6 +35,7 @@ $thingoo-frontend-theme: mat-dark-theme(
 @include angular-material-theme($thingoo-frontend-theme);
 
 /* You can add global styles to this file, and also import other style files */
+@import "~src/variables.scss";
 
 html,
 body {
@@ -54,4 +55,5 @@ body {
 
 .mat-app-background {
   min-height: 100%;
+  background-color: $thingoo-background;
 }
