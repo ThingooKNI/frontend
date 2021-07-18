@@ -1,7 +1,12 @@
+@import '~@angular/material/theming';
 @import "~src/variables.scss";
+@import "~src/mixins.scss";
 
 .entity-card {
     padding: 20px 35px;
+
+    @include mat-card-hover;
+
     &__content {
         display: flex;
         flex-direction: column;

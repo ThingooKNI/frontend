@@ -1,7 +1,11 @@
+@import '~@angular/material/theming';
 @import "~src/variables.scss";
+@import "~src/mixins.scss";
 
 .device-card {
     padding: 30px;
+
+    @include mat-card-hover;
 
     &__content {
         display: flex;
