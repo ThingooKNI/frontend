@@ -20,6 +20,7 @@ import { DeviceCardComponent } from './pages/device-list/device-card/device-card
 import { DeviceDetailsComponent } from './pages/device-details/device-details.component';
 import { SectionHeaderComponent } from './shared/section-header/section-header.component';
 import { DeviceIconComponent } from './shared/device-icon/device-icon.component';
+import { ValueRowComponent } from './shared/value-row/value-row.component';
 
 @NgModule({
   declarations: [
